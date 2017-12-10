@@ -1,0 +1,7 @@
+@import "../styles/colours.scss";
+
+.basketContainer {
+  & p {
+    background-color: $black;
+  }
+}
