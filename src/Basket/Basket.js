@@ -61,14 +61,17 @@ class Basket extends Component {
 
     return (
       <div className="basketContainer">
-        <p>
-          this is a basket
-        </p>
+        <h1>
+          Woohoo! It’s a basket!
+        </h1>
         <BasketForm
           items={ items }
           updateShoppingList={ this.updateShoppingList } />
         { basketItems }
-        <button onClick={ this.clearInBasketItems }>
+        <button onClick={ this.clearInBasketItems }
+          className="clearButton"
+          disabled={ items.length === 0 }
+        >
           Clear Items in Basket
         </button>
       </div>

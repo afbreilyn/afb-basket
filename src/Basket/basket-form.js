@@ -7,7 +7,6 @@ class BasketForm extends Component {
     let textVal = this.textInput.value;
 
     if (textVal !== "") {
-      // let dupArr = itemArray.filter(item => (item.text === textVal));
       let duplicate = itemArray.find((item) => {
         return item.text === textVal
       });
@@ -19,6 +18,7 @@ class BasketForm extends Component {
         duplicate.timeStamp = Date.now();
       } else {
         itemArray.unshift(
+          // timestamps is being recorded incase someday we want to sort by date added
           {
             text: textVal,
             timeStamp: Date.now(),
@@ -39,14 +39,22 @@ class BasketForm extends Component {
 
   render() {
     return (
-      <form onSubmit={ this.addItemToShoppingList }>
-        <input ref={ (input) => this.textInput = input } 
+      <form onSubmit={ this.addItemToShoppingList }
+        className="basketForm"
+      >
+        <input ref={ (input) => this.textInput = input }
+          className="textInput"
           placeholder="What do you need to buy?" />
-        <input ref={ (input) => this.numInput = input }
-          type="number" />
-        <button type="submit">
-          Add to shopping list
-        </button>
+        <div className="secondRowSmall">
+          <input ref={ (input) => this.numInput = input }
+            className="numInput"
+            type="number"
+            min="1"
+            placeholder="How many?" />
+          <button type="submit">
+            +
+          </button>
+        </div>
       </form>
     )
   }

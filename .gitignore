@@ -11,6 +11,7 @@
 
 # stupid css files
 /src/styles/colours.css
+/src/styles/texts.css
 
 # misc
 .DS_Store

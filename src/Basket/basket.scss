@@ -1,7 +1,123 @@
 @import "../styles/colours.scss";
 
 .basketContainer {
-  & h4 {
-    
+  text-align: center;
+  margin: 0 auto;
+  padding: 16px 12px;
+  background: $white;
+  max-width: 480px;
+  max-height: 800px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 6px;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+
+  & button {
+    background-color: $purple;
+    border: none;
+    border-radius: 2px;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    color: $white;
+    cursor: pointer;
+  }
+
+  & button:disabled {
+    opacity: .65;
+    cursor: not-allowed;
+  }
+
+  & .basketForm {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 16px 0 18px;
+
+    & input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -o-appearance: none;
+      outline: none;
+      border: 1px solid $med-grey;
+      border-radius: 2px;
+      padding: 4px 6px;
+      display: inline-flex;
+      font-size: 16px;
+      height: 37px;
+    }
+
+    & input.textInput {
+      flex: 1;
+      flex-grow: 2;
+    }
+
+    & .secondRowSmall {
+      display: inline-flex;
+
+      & input.numInput {
+        flex: 1;
+        flex-grow: 1;
+        max-width: 120px;
+        margin: 0 12px;
+      }
+
+      & input.numInput::-webkit-inner-spin-button {
+        opacity: 1;
+      }
+
+      & button {
+        flex: 1;
+        flex-grow: 1;
+        font-size: 22px;
+        padding: 5px 12px 8px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      & .secondRowSmall {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 12px;
+
+        & input.numInput {
+          margin: 0 12px 0 0;
+          max-width: initial;
+        }
+      }
+    }
+  }
+
+  & .item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background: $light-blue;
+    border-radius: 5px;
+    margin-top: 8px;
+    padding: 8px 12px;
+
+    & p {
+      margin-left: 16px;
+    }
+
+    & input[type='checkbox'], label {
+      cursor: pointer;
+    }
+
+    & .inBasketCheck {
+      display: inline;
+    }
+  }
+
+  & .clearButton {
+    margin-top: 16px;
   }
 }

@@ -1,13 +1,9 @@
 @import "./styles/colours.scss";
+@import "./styles/texts.scss";
 
 .App {
   text-align: center;
   background: $slightly-grey;
+  padding: 44px 12px;
   min-height: 100vh;
-
-  & h1, h2, h3, h4, h5, h6, p {
-    /* zeroing out */
-    padding: 0;
-    margin: 0;
-  }
 }
