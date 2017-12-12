@@ -12,8 +12,6 @@ class Basket extends Component {
   componentDidMount() {
     let fromLocal = localStorage.getItem('items');
 
-    debugger
-
     if (fromLocal) {
       let newState = JSON.parse(fromLocal); 
       this.setState({
