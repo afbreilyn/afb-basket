@@ -9,10 +9,25 @@ class Basket extends Component {
     items: []
   }
 
+  componentDidMount() {
+    let fromLocal = localStorage.getItem('items');
+
+    debugger
+
+    if (fromLocal) {
+      let newState = JSON.parse(fromLocal); 
+      this.setState({
+        items: newState
+      });
+    }
+  }
+
   updateShoppingList = (items) => {
     this.setState({
       items: items
     });
+
+    localStorage.setItem( 'items', JSON.stringify(items));
   }
 
   clearInBasketItems = () => {

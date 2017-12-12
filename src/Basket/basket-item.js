@@ -23,7 +23,7 @@ class BasketItem extends Component {
           { `${number} ${text}` }
         </p>
         <div>
-          <label for={ `inBasket-${text}` }>In the basket?</label>
+          <label htmlFor={ `inBasket-${text}` }>In the basket?</label>
           <input type="checkbox"
             className="inBasketCheck"
             checked={ inBasket }
